@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinNova Capital | Premium Financial Services</title>
+    <meta name="description" content="FinNova Capital - Building Your Financial Future with Confidence. We provide investment advisory, corporate finance, and wealth management.">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="FinNova Capital">
+    <meta property="og:description" content="Helping businesses and individuals achieve sustainable financial growth through innovative financial solutions.">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: '#0B0E11',
+                        primary: '#FCD535',
+                        primaryHover: '#F0B90B',
+                        card: '#1E2329',
+                        border: '#2B3139',
+                        textLight: '#FFFFFF',
+                        textSec: '#B8BDC7',
+                        success: '#0ECB81',
+                        danger: '#F6465D',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased selection:bg-primary selection:text-bg">
+    
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-follower"></div>
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-logo">FinNova</div>
+        <div class="loader-progress">
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Background Effects -->
+    <div id="tsparticles"></div>
+    <div class="bg-mesh"></div>
+
+    <!-- Sticky Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 py-4 transition-all duration-300 bg-transparent">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white flex items-center gap-2 interactive">
+                <i class="fa-solid fa-chart-line text-primary"></i> FinNova
+            </a>
+            <div class="hidden lg:flex space-x-8">
+                <a href="#home" class="text-textSec hover:text-primary transition-colors interactive text-sm font-medium relative group">Home
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#about" class="text-textSec hover:text-primary transition-colors interactive text-sm font-medium relative group">About
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#services" class="text-textSec hover:text-primary transition-colors interactive text-sm font-medium relative group">Services
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#portfolio" class="text-textSec hover:text-primary transition-colors interactive text-sm font-medium relative group">Portfolio
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#testimonials" class="text-textSec hover:text-primary transition-colors interactive text-sm font-medium relative group">Testimonials
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#contact" class="text-textSec hover:text-primary transition-colors interactive text-sm font-medium relative group">Contact
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+            <button class="hidden lg:block btn-primary px-6 py-2 rounded-full magnetic">Get Started</button>
+            <button class="lg:hidden text-white interactive">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen relative flex items-center pt-20 overflow-hidden">
+        <div class="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none z-0"></div>
+        <div class="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none z-0"></div>
+
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <!-- Text Content -->
+            <div data-aos="fade-right">
+                <h1 class="text-5xl md:text-7xl lg:text-7xl font-bold leading-tight mb-6">
+                    Building Your <br>
+                    <span class="text-gradient-primary">Financial Future</span><br>
+                    with Confidence
+                </h1>
+                <p class="text-textSec text-lg md:text-xl mb-8 max-w-lg h-[60px]">
+                    Helping businesses and individuals achieve sustainable financial growth through <span id="typed-text" class="text-white font-semibold"></span>
+                </p>
+                <div class="flex flex-wrap gap-4 mt-6">
+                    <button class="btn-primary px-8 py-4 rounded-full magnetic text-lg">Get Consultation</button>
+                    <button class="btn-outline px-8 py-4 rounded-full magnetic text-lg glass">Learn More</button>
+                </div>
+                
+                <div class="mt-16 flex gap-10 items-center border-t border-border pt-8">
+                    <div class="interactive">
+                        <div class="text-3xl font-bold text-white mb-1"><span class="counter-value" data-target="98" data-suffix="%">0</span></div>
+                        <div class="text-sm text-textSec">Client Satisfaction</div>
+                    </div>
+                    <div class="interactive">
+                        <div class="text-3xl font-bold text-white mb-1"><span class="counter-value" data-target="25" data-suffix="+">0</span></div>
+                        <div class="text-sm text-textSec">Years Experience</div>
+                    </div>
+                    <div class="interactive">
+                        <div class="text-3xl font-bold text-white mb-1"><span class="counter-value" data-target="4" data-suffix="B+">0</span></div>
+                        <div class="text-sm text-textSec">Managed Assets</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Graphics -->
+            <div class="relative hero-dashboard hidden lg:block h-[600px] w-full perspective-1000" data-aos="fade-left">
+                <div class="hero-dashboard-inner w-full h-full relative">
+                    <!-- Main Dashboard Card -->
+                    <div class="absolute inset-0 glass-card rounded-2xl p-6 border border-border shadow-2xl bg-card/60 flex flex-col justify-between interactive">
+                        <div class="flex justify-between items-center mb-6 border-b border-border pb-4">
+                            <div class="flex gap-2">
+                                <div class="w-3 h-3 rounded-full bg-danger"></div>
+                                <div class="w-3 h-3 rounded-full bg-primary"></div>
+                                <div class="w-3 h-3 rounded-full bg-success"></div>
+                            </div>
+                            <div class="text-textSec text-sm flex items-center gap-2"><i class="fa-solid fa-circle text-success text-[8px] animate-pulse"></i> Live Statistics</div>
+                        </div>
+                        
+                        <!-- Chart Graphic -->
+                        <div class="flex-1 flex items-end gap-3 px-4 relative">
+                            <!-- Horizontal Grid lines -->
+                            <div class="absolute inset-0 flex flex-col justify-between px-4 py-2 pointer-events-none opacity-20">
+                                <div class="w-full border-t border-dashed border-textSec"></div>
+                                <div class="w-full border-t border-dashed border-textSec"></div>
+                                <div class="w-full border-t border-dashed border-textSec"></div>
+                                <div class="w-full border-t border-dashed border-textSec"></div>
+                            </div>
+                            
+                            <div class="w-full bg-primary/20 rounded-t-sm h-[30%] hover:bg-primary/40 transition-all cursor-pointer relative group">
+                                <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-white text-bg text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">$1.2M</div>
+                            </div>
+                            <div class="w-full bg-primary/40 rounded-t-sm h-[50%] hover:bg-primary/60 transition-all cursor-pointer relative group">
+                                <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-white text-bg text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">$2.4M</div>
+                            </div>
+                            <div class="w-full bg-primary/60 rounded-t-sm h-[40%] hover:bg-primary/80 transition-all cursor-pointer relative group">
+                                <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-white text-bg text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">$1.8M</div>
+                            </div>
+                            <div class="w-full bg-primary/80 rounded-t-sm h-[70%] hover:bg-primary transition-all cursor-pointer relative group">
+                                <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-white text-bg text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">$3.5M</div>
+                            </div>
+                            <div class="w-full bg-primary rounded-t-sm h-[90%] shadow-[0_0_20px_rgba(252,213,53,0.4)] cursor-pointer relative group">
+                                <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-white text-bg text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">$4.2M</div>
+                            </div>
+                            <div class="w-full bg-primary/60 rounded-t-sm h-[60%] hover:bg-primary/80 transition-all cursor-pointer relative group">
+                                <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-white text-bg text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">$2.8M</div>
+                            </div>
+                            <div class="w-full bg-primary/40 rounded-t-sm h-[40%] hover:bg-primary/60 transition-all cursor-pointer relative group">
+                                <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-white text-bg text-xs font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">$1.9M</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Widgets -->
+                    <div class="absolute -top-8 -right-12 glass-card p-4 rounded-xl floating parallax-el border border-primary/30" data-value="-3">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-success/20 flex items-center justify-center text-success text-xl shadow-[0_0_15px_rgba(14,203,129,0.3)]">
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-textSec">Monthly Growth</div>
+                                <div class="font-bold text-white text-lg">+24.5%</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute -bottom-8 -left-12 glass-card p-4 rounded-xl floating parallax-el border border-primary/30" style="animation-delay: 2s;" data-value="4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary text-xl shadow-[0_0_15px_rgba(252,213,53,0.3)]">
+                                <i class="fa-solid fa-wallet"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-textSec">Total Assets</div>
+                                <div class="font-bold text-white text-lg">$4.2B</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Currency Icons -->
+                    <div class="absolute top-1/4 -left-16 text-primary/40 text-5xl parallax-el floating interactive" data-value="6"><i class="fa-brands fa-bitcoin"></i></div>
+                    <div class="absolute bottom-1/4 -right-12 text-primary/40 text-5xl parallax-el floating interactive" style="animation-delay: 1.5s;" data-value="-5"><i class="fa-solid fa-dollar-sign"></i></div>
+                    <div class="absolute top-1/2 right-1/4 text-primary/20 text-3xl parallax-el floating interactive" style="animation-delay: 0.8s;" data-value="3"><i class="fa-solid fa-euro-sign"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners / Stats -->
+    <section class="py-12 border-y border-border bg-card/20 glass relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap justify-center md:justify-between items-center gap-10 opacity-50 grayscale hover:grayscale-0 transition-all duration-700 fade-up-stagger">
+                <div class="text-3xl font-bold text-white flex items-center gap-2 interactive hover:text-primary transition-colors"><i class="fa-brands fa-stripe"></i></div>
+                <div class="text-3xl font-bold text-white flex items-center gap-2 interactive hover:text-primary transition-colors"><i class="fa-brands fa-aws"></i></div>
+                <div class="text-3xl font-bold text-white flex items-center gap-2 interactive hover:text-primary transition-colors"><i class="fa-brands fa-paypal"></i></div>
+                <div class="text-3xl font-bold text-white flex items-center gap-2 interactive hover:text-primary transition-colors"><i class="fa-brands fa-cc-visa"></i></div>
+                <div class="text-3xl font-bold text-white flex items-center gap-2 interactive hover:text-primary transition-colors"><i class="fa-brands fa-google-pay"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Image Grid -->
+                <div class="relative" data-aos="fade-right">
+                    <div class="aspect-square rounded-3xl overflow-hidden glass-card p-3 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="FinNova Corporate" class="w-full h-full object-cover rounded-2xl opacity-80 hover:opacity-100 transition-all duration-700 hover:scale-105">
+                    </div>
+                    
+                    <div class="absolute -bottom-10 -right-10 glass-card p-6 rounded-2xl w-72 floating hidden md:block border-primary/20 backdrop-blur-xl">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center text-primary text-2xl">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-white"><span class="counter-value" data-target="150" data-suffix="+">0</span></div>
+                                <div class="text-sm text-textSec font-medium">Financial Experts</div>
+                            </div>
+                        </div>
+                        <p class="text-xs text-textSec line-clamp-2">Dedicated professionals working around the clock to secure your wealth.</p>
+                    </div>
+                </div>
+                
+                <!-- Text Content -->
+                <div data-aos="fade-left">
+                    <div class="text-primary font-medium tracking-widest uppercase mb-4 text-sm flex items-center gap-3">
+                        <div class="w-10 h-[2px] bg-primary"></div> About FinNova
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Pioneering the Future of <span class="text-gradient-primary">Finance</span></h2>
+                    <p class="text-textSec mb-8 text-lg leading-relaxed">
+                        We are a premier financial institution dedicated to providing innovative solutions that empower businesses and individuals to achieve their financial goals with confidence and uncompromised security.
+                    </p>
+                    
+                    <div class="space-y-8 mt-10 fade-up-stagger">
+                        <div class="flex gap-5 interactive group">
+                            <div class="w-14 h-14 rounded-full bg-card border border-border flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-bg transition-colors duration-300">
+                                <i class="fa-solid fa-bullseye text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Our Mission</h4>
+                                <p class="text-textSec leading-relaxed">To democratize access to premium financial services through cutting-edge technology and unparalleled expertise.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5 interactive group">
+                            <div class="w-14 h-14 rounded-full bg-card border border-border flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-bg transition-colors duration-300">
+                                <i class="fa-solid fa-eye text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Our Vision</h4>
+                                <p class="text-textSec leading-relaxed">To establish the global standard for secure, transparent, and innovative wealth management across all borders.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 relative z-10 bg-card/20 border-y border-border/50">
+        <!-- Decoration -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none"></div>
+
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 max-w-3xl mx-auto" data-aos="fade-up">
+                <div class="text-primary font-medium tracking-widest uppercase mb-4 text-sm flex items-center justify-center gap-3">
+                    <div class="w-10 h-[2px] bg-primary"></div> Our Services <div class="w-10 h-[2px] bg-primary"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Comprehensive <span class="text-gradient-primary">Solutions</span></h2>
+                <p class="text-textSec text-lg">Tailored strategies designed to accelerate your growth and protect your wealth in a dynamic global economy.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 fade-up-stagger">
+                <!-- Service Card 1 -->
+                <div class="glass-card p-8 rounded-2xl interactive group hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-bg border border-border flex items-center justify-center text-primary text-2xl mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-bg group-hover:shadow-[0_0_15px_rgba(252,213,53,0.5)] transition-all duration-300">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors">Investment Advisory</h3>
+                    <p class="text-textSec mb-8 text-sm leading-relaxed">Strategic portfolio management and personalized investment guidance for long-term compounding growth.</p>
+                    <a href="#" class="text-primary text-sm font-bold uppercase tracking-wider flex items-center gap-2 group-hover:gap-4 transition-all">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="glass-card p-8 rounded-2xl interactive group hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-bg border border-border flex items-center justify-center text-primary text-2xl mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-bg group-hover:shadow-[0_0_15px_rgba(252,213,53,0.5)] transition-all duration-300">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors">Corporate Finance</h3>
+                    <p class="text-textSec mb-8 text-sm leading-relaxed">Capital restructuring, mergers, acquisitions, and strategic financial consulting for modern enterprises.</p>
+                    <a href="#" class="text-primary text-sm font-bold uppercase tracking-wider flex items-center gap-2 group-hover:gap-4 transition-all">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="glass-card p-8 rounded-2xl interactive group hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-bg border border-border flex items-center justify-center text-primary text-2xl mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-bg group-hover:shadow-[0_0_15px_rgba(252,213,53,0.5)] transition-all duration-300">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors">Financial Planning</h3>
+                    <p class="text-textSec mb-8 text-sm leading-relaxed">Comprehensive blueprints for retirement, education, and estate planning tailored to your exact needs.</p>
+                    <a href="#" class="text-primary text-sm font-bold uppercase tracking-wider flex items-center gap-2 group-hover:gap-4 transition-all">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="glass-card p-8 rounded-2xl interactive group hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-bg border border-border flex items-center justify-center text-primary text-2xl mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-bg group-hover:shadow-[0_0_15px_rgba(252,213,53,0.5)] transition-all duration-300">
+                        <i class="fa-solid fa-shield-virus"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors">Risk Management</h3>
+                    <p class="text-textSec mb-8 text-sm leading-relaxed">Identify, assess, and deeply mitigate financial risks with our advanced analytical tools and strategies.</p>
+                    <a href="#" class="text-primary text-sm font-bold uppercase tracking-wider flex items-center gap-2 group-hover:gap-4 transition-all">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="glass-card p-8 rounded-2xl interactive group hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-bg border border-border flex items-center justify-center text-primary text-2xl mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-bg group-hover:shadow-[0_0_15px_rgba(252,213,53,0.5)] transition-all duration-300">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors">Digital Banking</h3>
+                    <p class="text-textSec mb-8 text-sm leading-relaxed">Seamless, secure, and modern digital banking infrastructure designed for forward-thinking clients.</p>
+                    <a href="#" class="text-primary text-sm font-bold uppercase tracking-wider flex items-center gap-2 group-hover:gap-4 transition-all">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="glass-card p-8 rounded-2xl interactive group hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-bg border border-border flex items-center justify-center text-primary text-2xl mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-bg group-hover:shadow-[0_0_15px_rgba(252,213,53,0.5)] transition-all duration-300">
+                        <i class="fa-solid fa-umbrella"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors">Insurance</h3>
+                    <p class="text-textSec mb-8 text-sm leading-relaxed">Protect what matters most with our fully customized corporate and personal insurance solutions.</p>
+                    <a href="#" class="text-primary text-sm font-bold uppercase tracking-wider flex items-center gap-2 group-hover:gap-4 transition-all">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service Card 7 -->
+                <div class="glass-card p-8 rounded-2xl interactive group hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-bg border border-border flex items-center justify-center text-primary text-2xl mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-bg group-hover:shadow-[0_0_15px_rgba(252,213,53,0.5)] transition-all duration-300">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors">Business Funding</h3>
+                    <p class="text-textSec mb-8 text-sm leading-relaxed">Flexible capital injection solutions to effectively fuel your next stage of enterprise expansion.</p>
+                    <a href="#" class="text-primary text-sm font-bold uppercase tracking-wider flex items-center gap-2 group-hover:gap-4 transition-all">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service Card 8 -->
+                <div class="glass-card p-8 rounded-2xl interactive group hover:-translate-y-2 transition-transform duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-bg border border-border flex items-center justify-center text-primary text-2xl mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-bg group-hover:shadow-[0_0_15px_rgba(252,213,53,0.5)] transition-all duration-300">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors">Asset Management</h3>
+                    <p class="text-textSec mb-8 text-sm leading-relaxed">Institutional-grade asset allocation and active management across all major global markets.</p>
+                    <a href="#" class="text-primary text-sm font-bold uppercase tracking-wider flex items-center gap-2 group-hover:gap-4 transition-all">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us & Process -->
+    <section class="py-24 relative z-10 overflow-hidden">
+        <div class="absolute top-1/2 left-0 w-1/3 h-1/2 bg-primary/10 rounded-full blur-[150px] pointer-events-none -translate-y-1/2"></div>
+
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-20">
+                <!-- Why Choose Us -->
+                <div data-aos="fade-right">
+                    <div class="text-primary font-medium tracking-widest uppercase mb-4 text-sm flex items-center gap-3">
+                        <div class="w-10 h-[2px] bg-primary"></div> Why FinNova
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-10 leading-tight">The FinNova <br><span class="text-gradient-primary">Advantage</span></h2>
+                    
+                    <div class="grid sm:grid-cols-2 gap-6 fade-up-stagger">
+                        <div class="glass p-8 rounded-2xl border border-border hover:border-primary/50 hover:bg-card/40 transition-all duration-300 group interactive">
+                            <i class="fa-solid fa-user-tie text-primary text-4xl mb-6 group-hover:scale-110 transition-transform"></i>
+                            <h4 class="text-xl font-bold text-white mb-3">Certified Experts</h4>
+                            <p class="text-sm text-textSec leading-relaxed">Industry-leading professionals with decades of proven institutional experience.</p>
+                        </div>
+                        <div class="glass p-8 rounded-2xl border border-border hover:border-primary/50 hover:bg-card/40 transition-all duration-300 group interactive">
+                            <i class="fa-solid fa-scale-balanced text-primary text-4xl mb-6 group-hover:scale-110 transition-transform"></i>
+                            <h4 class="text-xl font-bold text-white mb-3">Transparent Fees</h4>
+                            <p class="text-sm text-textSec leading-relaxed">Clear, upfront pricing structures with zero hidden charges or surprises.</p>
+                        </div>
+                        <div class="glass p-8 rounded-2xl border border-border hover:border-primary/50 hover:bg-card/40 transition-all duration-300 group interactive">
+                            <i class="fa-solid fa-lock text-primary text-4xl mb-6 group-hover:scale-110 transition-transform"></i>
+                            <h4 class="text-xl font-bold text-white mb-3">Secure Transactions</h4>
+                            <p class="text-sm text-textSec leading-relaxed">Military-grade AES-256 encryption protecting every single digital interaction.</p>
+                        </div>
+                        <div class="glass p-8 rounded-2xl border border-border hover:border-primary/50 hover:bg-card/40 transition-all duration-300 group interactive">
+                            <i class="fa-solid fa-microchip text-primary text-4xl mb-6 group-hover:scale-110 transition-transform"></i>
+                            <h4 class="text-xl font-bold text-white mb-3">Innovative Tech</h4>
+                            <p class="text-sm text-textSec leading-relaxed">AI-driven predictive analytics and cutting-edge algorithmic financial modeling.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Work Process -->
+                <div data-aos="fade-left">
+                    <div class="text-primary font-medium tracking-widest uppercase mb-4 text-sm flex items-center gap-3">
+                        <div class="w-10 h-[2px] bg-primary"></div> How It Works
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-12 leading-tight">Our Proven <br><span class="text-gradient-primary">Process</span></h2>
+                    
+                    <div class="relative border-l-2 border-border/50 ml-6 space-y-10 fade-up-stagger pb-8">
+                        <!-- Step 1 -->
+                        <div class="relative pl-10 group interactive">
+                            <div class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-bg border-2 border-primary group-hover:bg-primary transition-colors duration-300 group-hover:shadow-[0_0_15px_var(--primary)]"></div>
+                            <div class="text-primary font-bold mb-2 tracking-wider text-sm">01. CONSULTATION</div>
+                            <h4 class="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">Initial Discovery</h4>
+                            <p class="text-textSec text-base leading-relaxed">We begin by deeply understanding your current financial status, long-term goals, and personal risk tolerance profile.</p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="relative pl-10 group interactive">
+                            <div class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-bg border-2 border-primary group-hover:bg-primary transition-colors duration-300 group-hover:shadow-[0_0_15px_var(--primary)]"></div>
+                            <div class="text-primary font-bold mb-2 tracking-wider text-sm">02. PLANNING</div>
+                            <h4 class="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">Strategic Blueprint</h4>
+                            <p class="text-textSec text-base leading-relaxed">Our experts craft a customized financial roadmap tailored specifically to your objectives using predictive modeling.</p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="relative pl-10 group interactive">
+                            <div class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-bg border-2 border-primary group-hover:bg-primary transition-colors duration-300 group-hover:shadow-[0_0_15px_var(--primary)]"></div>
+                            <div class="text-primary font-bold mb-2 tracking-wider text-sm">03. EXECUTION</div>
+                            <h4 class="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">Implementation</h4>
+                            <p class="text-textSec text-base leading-relaxed">Swift and precise deployment of the agreed strategies utilizing our advanced global trading platforms.</p>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="relative pl-10 group interactive">
+                            <div class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-bg border-2 border-primary group-hover:bg-primary transition-colors duration-300 group-hover:shadow-[0_0_15px_var(--primary)]"></div>
+                            <div class="text-primary font-bold mb-2 tracking-wider text-sm">04. MONITORING</div>
+                            <h4 class="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">Continuous Optimization</h4>
+                            <p class="text-textSec text-base leading-relaxed">24/7 proactive monitoring and periodic algorithmic adjustments to ensure sustained optimal performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio / Case Studies -->
+    <section id="portfolio" class="py-24 relative z-10 bg-card/20 border-y border-border/50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6" data-aos="fade-up">
+                <div class="max-w-2xl">
+                    <div class="text-primary font-medium tracking-widest uppercase mb-4 text-sm flex items-center gap-3">
+                        <div class="w-10 h-[2px] bg-primary"></div> Case Studies
+                    </div>
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold">Featured <span class="text-gradient-primary">Projects</span></h2>
+                </div>
+                <button class="btn-outline px-8 py-4 rounded-full magnetic glass font-bold">View All Projects</button>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10 fade-up-stagger">
+                <!-- Project 1 -->
+                <div class="group relative rounded-3xl overflow-hidden glass-card cursor-pointer interactive shadow-[0_0_30px_rgba(0,0,0,0.3)]">
+                    <div class="h-[400px] md:h-[500px] w-full relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-bg via-bg/60 to-transparent z-10 opacity-90 group-hover:opacity-70 transition-opacity duration-500"></div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Tech Startup Funding" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out">
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-10 z-20 translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+                        <div class="text-primary text-sm font-bold mb-3 tracking-widest uppercase">Corporate Finance</div>
+                        <h3 class="text-3xl font-bold text-white mb-4">Series B Funding Round</h3>
+                        <p class="text-textSec text-base opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 line-clamp-2">Successfully secured $45M in Series B funding for a leading AI startup, facilitating global expansion.</p>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="group relative rounded-3xl overflow-hidden glass-card cursor-pointer interactive shadow-[0_0_30px_rgba(0,0,0,0.3)] mt-0 md:mt-20">
+                    <div class="h-[400px] md:h-[500px] w-full relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-bg via-bg/60 to-transparent z-10 opacity-90 group-hover:opacity-70 transition-opacity duration-500"></div>
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Asset Management" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-out">
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-full p-10 z-20 translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+                        <div class="text-primary text-sm font-bold mb-3 tracking-widest uppercase">Asset Management</div>
+                        <h3 class="text-3xl font-bold text-white mb-4">Global Real Estate Portfolio</h3>
+                        <p class="text-textSec text-base opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 line-clamp-2">Restructured a $1.2B commercial real estate portfolio, increasing annual yield by a massive 14%.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-32 relative z-10 overflow-hidden">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px] pointer-events-none"></div>
+
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-20 max-w-3xl mx-auto" data-aos="fade-up">
+                <div class="text-primary font-medium tracking-widest uppercase mb-4 text-sm flex items-center justify-center gap-3">
+                    <div class="w-10 h-[2px] bg-primary"></div> Testimonials <div class="w-10 h-[2px] bg-primary"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">What Our <span class="text-gradient-primary">Clients Say</span></h2>
+            </div>
+            
+            <div class="swiper testimonials-slider pb-20 interactive" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="glass-card p-10 rounded-3xl h-full flex flex-col justify-between border border-border/50 hover:border-primary/30 transition-colors">
+                            <div>
+                                <i class="fa-solid fa-quote-left text-4xl text-primary/20 mb-6 block"></i>
+                                <div class="text-primary flex gap-1 mb-6 text-sm">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-textSec text-lg italic mb-10 leading-relaxed">"FinNova transformed our corporate treasury strategy completely. Their analytical approach and proactive management increased our liquidity returns by 40% in just one fiscal year."</p>
+                            </div>
+                            <div class="flex items-center gap-5 border-t border-border pt-6">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Client" class="w-14 h-14 rounded-full object-cover border-2 border-primary p-0.5">
+                                <div>
+                                    <h5 class="text-white font-bold text-lg">Michael Sterling</h5>
+                                    <div class="text-primary text-sm font-medium">CFO, Nexus Tech</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="glass-card p-10 rounded-3xl h-full flex flex-col justify-between border border-border/50 hover:border-primary/30 transition-colors">
+                            <div>
+                                <i class="fa-solid fa-quote-left text-4xl text-primary/20 mb-6 block"></i>
+                                <div class="text-primary flex gap-1 mb-6 text-sm">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="text-textSec text-lg italic mb-10 leading-relaxed">"The wealth management team at FinNova provides a level of service that is unmatched. Their digital dashboard makes tracking my global portfolio incredibly seamless and transparent."</p>
+                            </div>
+                            <div class="flex items-center gap-5 border-t border-border pt-6">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Client" class="w-14 h-14 rounded-full object-cover border-2 border-primary p-0.5">
+                                <div>
+                                    <h5 class="text-white font-bold text-lg">Sarah Jenkins</h5>
+                                    <div class="text-primary text-sm font-medium">Angel Investor</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="glass-card p-10 rounded-3xl h-full flex flex-col justify-between border border-border/50 hover:border-primary/30 transition-colors">
+                            <div>
+                                <i class="fa-solid fa-quote-left text-4xl text-primary/20 mb-6 block"></i>
+                                <div class="text-primary flex gap-1 mb-6 text-sm">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                                <p class="text-textSec text-lg italic mb-10 leading-relaxed">"Securing our Series C funding was complex, but FinNova's advisory team navigated the negotiations brilliantly. They are true strategic partners who care about our success."</p>
+                            </div>
+                            <div class="flex items-center gap-5 border-t border-border pt-6">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Client" class="w-14 h-14 rounded-full object-cover border-2 border-primary p-0.5">
+                                <div>
+                                    <h5 class="text-white font-bold text-lg">David Chen</h5>
+                                    <div class="text-primary text-sm font-medium">CEO, BioHealth Inc.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination mt-12 relative"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News -->
+    <section class="py-24 relative z-10 bg-card/20 border-y border-border/50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 max-w-3xl mx-auto" data-aos="fade-up">
+                <div class="text-primary font-medium tracking-widest uppercase mb-4 text-sm flex items-center justify-center gap-3">
+                    <div class="w-10 h-[2px] bg-primary"></div> Insights <div class="w-10 h-[2px] bg-primary"></div>
+                </div>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Latest <span class="text-gradient-primary">News & Analysis</span></h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 fade-up-stagger">
+                <!-- News 1 -->
+                <div class="glass-card rounded-3xl overflow-hidden group interactive border border-border/50 hover:border-primary/50 transition-colors duration-300">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-bg/20 group-hover:bg-transparent transition-colors z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Market Trends" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 z-20 bg-card/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full border border-border">
+                            Market Analysis
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-sm text-textSec mb-4 flex items-center gap-2 font-medium">
+                            <i class="fa-regular fa-calendar text-primary"></i> October 15, 2023
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors line-clamp-2 leading-snug">Navigating Global Market Volatility in Q4 2023</h4>
+                        <p class="text-textSec text-base mb-6 line-clamp-3 leading-relaxed">Strategic insights from our chief economists on how to position your portfolio defensively while capturing emerging growth opportunities.</p>
+                        <a href="#" class="text-primary text-sm font-bold flex items-center gap-2 group-hover:gap-4 transition-all uppercase tracking-wider">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- News 2 -->
+                <div class="glass-card rounded-3xl overflow-hidden group interactive border border-border/50 hover:border-primary/50 transition-colors duration-300">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-bg/20 group-hover:bg-transparent transition-colors z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Crypto" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 z-20 bg-card/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full border border-border">
+                            Digital Assets
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-sm text-textSec mb-4 flex items-center gap-2 font-medium">
+                            <i class="fa-regular fa-calendar text-primary"></i> October 10, 2023
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors line-clamp-2 leading-snug">The Integration of Blockchain in Corporate Treasury</h4>
+                        <p class="text-textSec text-base mb-6 line-clamp-3 leading-relaxed">How forward-thinking enterprises are utilizing stablecoins and smart contracts to streamline cross-border settlements.</p>
+                        <a href="#" class="text-primary text-sm font-bold flex items-center gap-2 group-hover:gap-4 transition-all uppercase tracking-wider">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- News 3 -->
+                <div class="glass-card rounded-3xl overflow-hidden group interactive border border-border/50 hover:border-primary/50 transition-colors duration-300">
+                    <div class="h-56 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-bg/20 group-hover:bg-transparent transition-colors z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sustainability" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute top-4 right-4 z-20 bg-card/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full border border-border">
+                            ESG Investing
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-sm text-textSec mb-4 flex items-center gap-2 font-medium">
+                            <i class="fa-regular fa-calendar text-primary"></i> October 05, 2023
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors line-clamp-2 leading-snug">The Rise of Sustainable Finance and ESG Metrics</h4>
+                        <p class="text-textSec text-base mb-6 line-clamp-3 leading-relaxed">Examining the profound shift towards environmental, social, and governance factors in institutional investment mandates.</p>
+                        <a href="#" class="text-primary text-sm font-bold flex items-center gap-2 group-hover:gap-4 transition-all uppercase tracking-wider">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ & Contact -->
+    <section id="contact" class="py-32 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-20">
+                <!-- FAQ -->
+                <div data-aos="fade-right">
+                    <div class="text-primary font-medium tracking-widest uppercase mb-4 text-sm flex items-center gap-3">
+                        <div class="w-10 h-[2px] bg-primary"></div> Support
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-12 leading-tight">Frequently Asked <br><span class="text-gradient-primary">Questions</span></h2>
+                    
+                    <div class="space-y-6 faq-container">
+                        <!-- FAQ 1 -->
+                        <div class="glass-card border border-border rounded-2xl overflow-hidden interactive faq-item">
+                            <button class="w-full text-left px-8 py-6 flex justify-between items-center text-white font-bold text-lg hover:text-primary transition-colors">
+                                What is the minimum investment for advisory services?
+                                <i class="fa-solid fa-chevron-down text-primary transition-transform duration-300"></i>
+                            </button>
+                            <div class="px-8 pb-6 text-textSec text-base faq-content hidden leading-relaxed border-t border-border/50 pt-4 mt-2 mx-4">
+                                Our bespoke wealth management services typically begin at $500,000 in investable assets. However, we offer specialized digital portfolio solutions starting at lower thresholds for emerging affluent clients.
+                            </div>
+                        </div>
+                        <!-- FAQ 2 -->
+                        <div class="glass-card border border-border rounded-2xl overflow-hidden interactive faq-item">
+                            <button class="w-full text-left px-8 py-6 flex justify-between items-center text-white font-bold text-lg hover:text-primary transition-colors">
+                                How do you ensure the security of my data and assets?
+                                <i class="fa-solid fa-chevron-down text-primary transition-transform duration-300"></i>
+                            </button>
+                            <div class="px-8 pb-6 text-textSec text-base faq-content hidden leading-relaxed border-t border-border/50 pt-4 mt-2 mx-4">
+                                We employ institutional-grade security protocols, including AES-256 encryption, multi-factor authentication, and cold storage solutions for digital assets, monitored 24/7 by our dedicated cybersecurity team.
+                            </div>
+                        </div>
+                        <!-- FAQ 3 -->
+                        <div class="glass-card border border-border rounded-2xl overflow-hidden interactive faq-item">
+                            <button class="w-full text-left px-8 py-6 flex justify-between items-center text-white font-bold text-lg hover:text-primary transition-colors">
+                                Are your financial planners fiduciaries?
+                                <i class="fa-solid fa-chevron-down text-primary transition-transform duration-300"></i>
+                            </button>
+                            <div class="px-8 pb-6 text-textSec text-base faq-content hidden leading-relaxed border-t border-border/50 pt-4 mt-2 mx-4">
+                                Yes, absolutely. As fiduciaries, we are legally and ethically bound to act solely in your best interest, ensuring full transparency in our fee structure and investment recommendations without hidden commissions.
+                            </div>
+                        </div>
+                        <!-- FAQ 4 -->
+                        <div class="glass-card border border-border rounded-2xl overflow-hidden interactive faq-item">
+                            <button class="w-full text-left px-8 py-6 flex justify-between items-center text-white font-bold text-lg hover:text-primary transition-colors">
+                                How often will we review my financial plan?
+                                <i class="fa-solid fa-chevron-down text-primary transition-transform duration-300"></i>
+                            </button>
+                            <div class="px-8 pb-6 text-textSec text-base faq-content hidden leading-relaxed border-t border-border/50 pt-4 mt-2 mx-4">
+                                We conduct comprehensive quarterly reviews with your dedicated advisor in person or virtually. Additionally, you have real-time access to your portfolio's performance through our advanced client portal 24/7.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div data-aos="fade-left">
+                    <div class="glass-card p-10 rounded-3xl border border-primary/30 relative overflow-hidden shadow-[0_0_40px_rgba(252,213,53,0.1)]">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-bl-full blur-3xl pointer-events-none"></div>
+                        <h3 class="text-3xl font-bold text-white mb-2">Request a Consultation</h3>
+                        <p class="text-textSec mb-8 text-sm">Fill out the form below and our team will get back to you within 24 hours.</p>
+                        
+                        <form class="space-y-5 relative z-10">
+                            <div class="grid grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-textSec text-xs mb-2 font-bold tracking-wider uppercase">First Name</label>
+                                    <input type="text" class="w-full bg-bg/50 border border-border rounded-xl px-5 py-4 text-white focus:outline-none focus:border-primary transition-colors hover:border-textSec interactive" placeholder="John">
+                                </div>
+                                <div>
+                                    <label class="block text-textSec text-xs mb-2 font-bold tracking-wider uppercase">Last Name</label>
+                                    <input type="text" class="w-full bg-bg/50 border border-border rounded-xl px-5 py-4 text-white focus:outline-none focus:border-primary transition-colors hover:border-textSec interactive" placeholder="Doe">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-textSec text-xs mb-2 font-bold tracking-wider uppercase">Email Address</label>
+                                <input type="email" class="w-full bg-bg/50 border border-border rounded-xl px-5 py-4 text-white focus:outline-none focus:border-primary transition-colors hover:border-textSec interactive" placeholder="john@example.com">
+                            </div>
+                            <div>
+                                <label class="block text-textSec text-xs mb-2 font-bold tracking-wider uppercase">Service Interest</label>
+                                <div class="relative interactive">
+                                    <select class="w-full bg-bg/50 border border-border rounded-xl px-5 py-4 text-white focus:outline-none focus:border-primary transition-colors appearance-none hover:border-textSec cursor-pointer">
+                                        <option>Wealth Management</option>
+                                        <option>Corporate Finance</option>
+                                        <option>Business Funding</option>
+                                        <option>Other</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down absolute right-5 top-1/2 -translate-y-1/2 text-primary pointer-events-none"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-textSec text-xs mb-2 font-bold tracking-wider uppercase">Message</label>
+                                <textarea rows="4" class="w-full bg-bg/50 border border-border rounded-xl px-5 py-4 text-white focus:outline-none focus:border-primary transition-colors hover:border-textSec interactive resize-none" placeholder="How can we help you achieve your financial goals?"></textarea>
+                            </div>
+                            <button type="button" class="btn-primary w-full py-4 rounded-xl magnetic font-bold text-lg mt-4 shadow-[0_10px_20px_rgba(252,213,53,0.2)]">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Maps & Info -->
+            <div class="grid md:grid-cols-3 gap-8 mt-20 fade-up-stagger">
+                <div class="glass-card p-8 rounded-2xl border border-border flex items-start gap-5 hover:-translate-y-2 transition-transform duration-300 interactive group">
+                    <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center text-primary text-2xl shrink-0 group-hover:bg-primary group-hover:text-bg transition-colors">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-lg mb-2 group-hover:text-primary transition-colors">Global Headquarters</h4>
+                        <p class="text-textSec text-sm leading-relaxed">One World Trade Center<br>Suite 4500, New York, NY 10007</p>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-2xl border border-border flex items-start gap-5 hover:-translate-y-2 transition-transform duration-300 interactive group">
+                    <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center text-primary text-2xl shrink-0 group-hover:bg-primary group-hover:text-bg transition-colors">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-lg mb-2 group-hover:text-primary transition-colors">Contact Numbers</h4>
+                        <p class="text-textSec text-sm leading-relaxed">Toll Free: +1 (800) 123-4567<br>Direct: +1 (212) 555-0198</p>
+                    </div>
+                </div>
+                <div class="glass-card p-8 rounded-2xl border border-border flex items-start gap-5 hover:-translate-y-2 transition-transform duration-300 interactive group">
+                    <div class="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center text-primary text-2xl shrink-0 group-hover:bg-primary group-hover:text-bg transition-colors">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold text-lg mb-2 group-hover:text-primary transition-colors">Email Addresses</h4>
+                        <p class="text-textSec text-sm leading-relaxed">General: info@finnova.com<br>Support: support@finnova.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#050709] border-t border-border pt-24 pb-10 relative z-10 overflow-hidden">
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-primary/5 blur-[120px] pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-20">
+                <div class="lg:col-span-4">
+                    <a href="#" class="text-3xl font-bold text-white flex items-center gap-3 interactive mb-8">
+                        <i class="fa-solid fa-chart-line text-primary"></i> FinNova
+                    </a>
+                    <p class="text-textSec text-base mb-8 leading-relaxed max-w-sm">
+                        A premier financial institution empowering global growth through innovative investment strategies, corporate finance, and advanced digital wealth management.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center text-textSec hover:text-bg hover:bg-primary hover:border-primary transition-all duration-300 interactive hover:-translate-y-1"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center text-textSec hover:text-bg hover:bg-primary hover:border-primary transition-all duration-300 interactive hover:-translate-y-1"><i class="fa-brands fa-twitter text-lg"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center text-textSec hover:text-bg hover:bg-primary hover:border-primary transition-all duration-300 interactive hover:-translate-y-1"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-card border border-border flex items-center justify-center text-textSec hover:text-bg hover:bg-primary hover:border-primary transition-all duration-300 interactive hover:-translate-y-1"><i class="fa-brands fa-instagram text-lg"></i></a>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-2">
+                    <h4 class="text-white font-bold text-xl mb-8">Quick Links</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#about" class="text-textSec hover:text-primary transition-colors flex items-center gap-2 group"><i class="fa-solid fa-angle-right text-xs group-hover:translate-x-1 transition-transform"></i> About Us</a></li>
+                        <li><a href="#services" class="text-textSec hover:text-primary transition-colors flex items-center gap-2 group"><i class="fa-solid fa-angle-right text-xs group-hover:translate-x-1 transition-transform"></i> Our Services</a></li>
+                        <li><a href="#portfolio" class="text-textSec hover:text-primary transition-colors flex items-center gap-2 group"><i class="fa-solid fa-angle-right text-xs group-hover:translate-x-1 transition-transform"></i> Case Studies</a></li>
+                        <li><a href="#" class="text-textSec hover:text-primary transition-colors flex items-center gap-2 group"><i class="fa-solid fa-angle-right text-xs group-hover:translate-x-1 transition-transform"></i> Careers</a></li>
+                        <li><a href="#contact" class="text-textSec hover:text-primary transition-colors flex items-center gap-2 group"><i class="fa-solid fa-angle-right text-xs group-hover:translate-x-1 transition-transform"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="lg:col-span-2">
+                    <h4 class="text-white font-bold text-xl mb-8">Legal</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-textSec hover:text-primary transition-colors flex items-center gap-2 group"><i class="fa-solid fa-angle-right text-xs group-hover:translate-x-1 transition-transform"></i> Terms of Service</a></li>
+                        <li><a href="#" class="text-textSec hover:text-primary transition-colors flex items-center gap-2 group"><i class="fa-solid fa-angle-right text-xs group-hover:translate-x-1 transition-transform"></i> Privacy Policy</a></li>
+                        <li><a href="#" class="text-textSec hover:text-primary transition-colors flex items-center gap-2 group"><i class="fa-solid fa-angle-right text-xs group-hover:translate-x-1 transition-transform"></i> Cookie Policy</a></li>
+                        <li><a href="#" class="text-textSec hover:text-primary transition-colors flex items-center gap-2 group"><i class="fa-solid fa-angle-right text-xs group-hover:translate-x-1 transition-transform"></i> Disclaimer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="lg:col-span-4">
+                    <h4 class="text-white font-bold text-xl mb-8">Newsletter</h4>
+                    <p class="text-textSec text-base mb-6 leading-relaxed">Subscribe to receive premium market insights and company updates directly to your inbox.</p>
+                    <form class="flex gap-2 relative group interactive">
+                        <input type="email" placeholder="Your email address" class="bg-card border border-border rounded-xl pl-6 pr-16 py-4 text-base text-white focus:outline-none focus:border-primary transition-colors w-full hover:border-textSec">
+                        <button type="button" class="absolute right-2 top-2 bottom-2 bg-primary text-bg px-5 rounded-lg font-bold hover:bg-primaryHover transition-colors"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-border/50 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-textSec text-sm font-medium">&copy; 2024 FinNova Capital. All rights reserved.</p>
+                <div class="flex items-center gap-2 text-textSec text-sm font-medium">
+                    Designed with <i class="fa-solid fa-heart text-danger animate-pulse mx-1"></i> for financial excellence.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.0/tsparticles.bundle.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
